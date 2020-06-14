@@ -1,0 +1,1 @@
+Please download and extract the raw image of NUS-WIDE in this folder. Please get the full dataset by contacting the NUS-WIDE authors (https://lms.comp.nus.edu.sg/wp-content/uploads/2019/research/nuswide/NUS-WIDE.html)

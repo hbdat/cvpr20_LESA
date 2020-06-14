@@ -1,0 +1,1 @@
+Please download and extract the meta-data of NUS-WIDE (https://lms.comp.nus.edu.sg/wp-content/uploads/2019/research/nuswide/NUS-WIDE.html) including groundtruth, tags, concept list, and image list in this folder.

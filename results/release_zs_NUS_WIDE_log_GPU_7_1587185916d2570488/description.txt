@@ -1,0 +1,42 @@
+constant unseen
+lr 0.001
+n_iters 200000
+no shuffle
+adaptive learning rate
+n_anneal 10
+using GloVe w2v
+------------------------------
+VGG
+------------------------------
+
+train_img: /home/project_amadeus/mnt/raptor/hbdat/Visual_word_attention_model/TFRecords/NUS_WIDE_train_full_feature_ZLIB.tfrecords
+test_img: /home/project_amadeus/mnt/raptor/hbdat/Visual_word_attention_model/TFRecords/NUS_WIDE_test_full_feature_ZLIB.tfrecords
+val_img: /home/project_amadeus/mnt/raptor/hbdat/Visual_word_attention_model/TFRecords/NUS_WIDE_train_full_feature_ZLIB.tfrecords
+------------------------------
+build_model_rank_sum
+const_vec
+learn conv
+l2_scale 0.0005
+BatchNorm for conv
+number of attention 10
+MLP attention model using original feature
+random init second layers
+global mean pooling features
+prediction_frac
+prediction_frac
+prediction_frac
+subset labels
+!!!!!!! attention_distribution_soft_cardinality !!!!!!!
+!!!!!!! NO cardinality normalization !!!!!!!
+Tensor("attention_distribution_soft_cardinality/Sum:0", shape=(?, 10), dtype=float32) -- except shape (?,10)
+attention_ortho_span_regularizer
+zero-out diag
+attention_span_global margin 0.0
+lambda att span: 0.01
+lambda att global: 0.001
+lambda att dist: 0.1
+lambda w2v diff: 0.0
+------------------------------
+adaptive learning rate
+signal_str 0.3
+patient 5

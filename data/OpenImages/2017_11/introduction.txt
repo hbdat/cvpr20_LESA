@@ -1,0 +1,1 @@
+Please download and extract the image url ( https://storage.googleapis.com/openimages/2017_11/images_2017_11.tar.gz ) into the 2017_11 folder in order to download images.
