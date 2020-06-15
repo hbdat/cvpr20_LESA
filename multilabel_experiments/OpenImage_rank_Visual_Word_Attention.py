@@ -24,7 +24,7 @@ from tensorflow.contrib import slim
 from core.model_share_attention import AttentionClassifier
 from core.utils import visualize_attention,Logger,get_compress_type,LearningRate,evaluate_k,evaluate,compute_AP,\
                         evaluate_zs_df_OpenImage
-from global_setting_Pegasus import dim_feature,train_img_path,val_img_path,n_iters,\
+from global_setting import dim_feature,train_img_path,val_img_path,n_iters,\
                                 batch_size,NFS_path,description,init_w2v,test_img_path
 #%%
 idx_GPU=7
