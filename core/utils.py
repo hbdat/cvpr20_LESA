@@ -255,3 +255,49 @@ class LearningRate:
                 self.m = self.patient
             self.m -= 1
         return new_lr
+    
+def evaluate_zs_df_OpenImage(iterator_tst,tensors_zs,tensors_gzs,unseen_classes,classes,sess,model,k_zs = [3,5],k_gzs = [10,20],mode_F1='overall'):
+    ap_tst_zs,predictions_zs,labels_zs=evaluate(iterator_tst,tensors_zs,model.features,model.zs_logits,sess,model)
+    ap_tst_gzs,predictions_gzs,labels_gzs=evaluate(iterator_tst,tensors_gzs,model.features,model.gzs_logits,sess,model)
+    model._log('mAP zs {}'.format(np.mean(ap_tst_zs)))
+    model._log('mAP gzs {}'.format(np.mean(ap_tst_gzs)))
+    
+    norm_b = np.linalg.norm(predictions_zs)
+    F1_tst,P_tst,R_tst=evaluate_k(k_zs[0],iterator_tst,tensors_zs,model.features,model.zs_logits,sess,model,predictions_zs,labels_zs,mode_F1=mode_F1)
+    F1_p_tst,P_p_tst,R_p_tst=evaluate_k(k_zs[1],iterator_tst,tensors_zs,model.features,model.zs_logits,sess,model,predictions_zs,labels_zs,mode_F1=mode_F1)
+    model._log('sanity check {}'.format(np.linalg.norm(predictions_zs)-norm_b))
+    
+    g_F1_tst,g_P_tst,g_R_tst=evaluate_k(k_gzs[0],iterator_tst,tensors_gzs,model.features,model.gzs_logits,sess,model,predictions_gzs,labels_gzs,mode_F1=mode_F1)
+    g_F1_p_tst,g_P_p_tst,g_R_p_tst=evaluate_k(k_gzs[1],iterator_tst,tensors_gzs,model.features,model.gzs_logits,sess,model,predictions_gzs,labels_gzs,mode_F1=mode_F1)
+    model._log('sanity check {}'.format(np.linalg.norm(predictions_zs)-norm_b))
+    
+    model._log('k={}: {} {} {}'.format(k_zs[0],np.mean(F1_tst), np.mean(P_tst), np.mean(R_tst)))
+    model._log('k={}: {} {} {}'.format(k_zs[1],np.mean(F1_p_tst), np.mean(P_p_tst), np.mean(R_p_tst)))
+    model._log('g_k={}: {} {} {}'.format(k_gzs[0],np.mean(g_F1_tst), np.mean(g_P_tst), np.mean(g_R_tst)))
+    model._log('g_k={}: {} {} {}'.format(k_gzs[1],np.mean(g_F1_p_tst), np.mean(g_P_p_tst), np.mean(g_R_p_tst)))
+        
+    ## reload best model
+    df_zs = pd.DataFrame()
+    df_zs['classes']=unseen_classes
+    df_zs['F1_{}'.format(k_zs[0])]=F1_tst
+    df_zs['P_{}'.format(k_zs[0])]=P_tst
+    df_zs['R_{}'.format(k_zs[0])]=R_tst
+    
+    df_zs['F1_{}'.format(k_zs[1])]=F1_p_tst
+    df_zs['P_{}'.format(k_zs[1])]=P_p_tst
+    df_zs['R_{}'.format(k_zs[1])]=R_p_tst
+    
+    df_zs['ap'] = ap_tst_zs
+    
+    df_gzs = pd.DataFrame()
+    df_gzs['classes']=classes
+    df_gzs['g_F1_{}'.format(k_gzs[0])]=g_F1_tst
+    df_gzs['g_P_{}'.format(k_gzs[0])]=g_P_tst
+    df_gzs['g_R_{}'.format(k_gzs[0])]=g_R_tst
+    
+    df_gzs['g_F1_{}'.format(k_gzs[1])]=g_F1_p_tst
+    df_gzs['g_P_{}'.format(k_gzs[1])]=g_P_p_tst
+    df_gzs['g_R_{}'.format(k_gzs[1])]=g_R_p_tst
+    
+    df_gzs['ap'] = ap_tst_gzs
+    return df_zs,df_gzs

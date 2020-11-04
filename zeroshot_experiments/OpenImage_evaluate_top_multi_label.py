@@ -40,7 +40,7 @@ name='eval_top_obs_2_400_mll_zs_OpenImage_log_GPU_{}_{}'.format(idx_GPU,str(time
 evaluation_path = NFS_path+'results/mll_zs_OpenImage_log_GPU_5_1551726076d6135786'
 save_path = NFS_path+'results/'+name
 k = 5
-k_zs = [3,5]
+k_zs = [10,20]
 k_gzs = [10,20]
 path_top_unseen = './data/2018_04/top_400_unseen.csv'
 print('n_iters',n_iters)
