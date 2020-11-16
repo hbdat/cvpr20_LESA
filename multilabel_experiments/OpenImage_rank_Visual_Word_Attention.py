@@ -52,7 +52,7 @@ with open(init_w2v,'rb') as infile:
     
 df_top_unseen = pd.read_csv(path_top_unseen,header=None)
 idx_top_unseen = df_top_unseen.values[:,0]
-assert len(idx_top_unseen) == 399
+assert len(idx_top_unseen) == 400
 unseen_vecs = unseen_vecs[idx_top_unseen]
 #%%
 def parser(record):
