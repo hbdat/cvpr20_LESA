@@ -4,6 +4,8 @@
 This repository contains the implementation of [Shared Attention for Multi-label Zero-shot Learning](http://khoury.neu.edu/home/eelhami/publications/MultiAtt-MLZSL-CVPR20.pdf).
 > In this work, we address zero-shot multi-label learning for recognition all (un)seen labels using a shared multi-attention method with a novel training mechanism.
 
+![Image](https://github.com/hbdat/cvpr20_LESA/raw/master/fig/high_level_schematic.png)
+
 ---
 ## Prerequisites
 + Python 3.x
