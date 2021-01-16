@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.12) (preloaded format=pdflatex 2021.1.2)  16 JAN 2021 01:14
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.12) (preloaded format=pdflatex 2021.1.2)  16 JAN 2021 01:27
 entering extended mode
 **./augment_1_trick.tex
 (augment_1_trick.tex
@@ -351,7 +351,7 @@ Here is how much of TeX's memory you used:
  21459 multiletter control sequences out of 15000+200000
  407381 words of font info for 40 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 70i,6n,76p,236b,185s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 70i,6n,76p,238b,185s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Software/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Softw
 are/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Software/MiKTeX/fonts/
 type1/public/amsfonts/cm/cmmi8.pfb><C:/Software/MiKTeX/fonts/type1/public/amsfo
@@ -359,7 +359,7 @@ nts/cm/cmr10.pfb><C:/Software/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><
 C:/Software/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Software/MiKTeX
 /fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Software/MiKTeX/fonts/type1/public
 /amsfonts/cm/cmsy10.pfb>
-Output written on augment_1_trick.pdf (1 page, 84607 bytes).
+Output written on augment_1_trick.pdf (1 page, 84658 bytes).
 PDF statistics:
  38 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

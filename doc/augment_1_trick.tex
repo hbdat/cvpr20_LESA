@@ -77,6 +77,6 @@ It can be shown that $f(W[x|1])$ is:
 f\Big(\sum^{N}_{i=1}W_{i,j} x_i + W_{N+1,j}x_{N+1}\Big) = f\Big(\sum^{N}_{i=1}W_{i,j} x_i + W_{N+1,j}\Big)
 \end{equation}
 for each output dimension $j$. Notice that $x_{N+1}=1$ since we augment $x$ by 1.
-If we look closely, this is equivalent to $y_j$ when we consider the last term $W_{N+1,j}$ to be $b_j$. Thus, $f(W[x|1])$ can be considered as an compact way to compute $f(Wx+b)$
+If we look closely, this is equivalent to $y_j$ as last term $W_{N+1,j}$ can be considered as $b_j$ since they are both independent of $x$. Thus, $f(W[x|1])$ can be considered as a compact way to compute $f(Wx+b)$
 
 \end{document}
