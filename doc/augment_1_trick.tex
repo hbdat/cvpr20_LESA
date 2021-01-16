@@ -66,7 +66,7 @@ A fully-connected layer has the form:
 y = f(Wx+b), 
 \end{equation}
 where $W$, $b$ are learnable linear transformation and bias vector, respectively, and $f(\cdot)$ is an element-wise activation function such as ReLU. 
-Let assume we have N input dimension $x\in R^N$. If we break it down into each output dimension $j$, we would have:
+Let assume we have N input dimension $x\in R^N$. If we break down $y$ into each output dimension $j$, we would have:
 \begin{equation}
 y_j = f\Big(\sum^{N}_{i=1}W_{i,j} x_i + b_j\Big),
 \end{equation}
