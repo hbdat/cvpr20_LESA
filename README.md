@@ -26,8 +26,8 @@ Please download and extract the vgg_19 model (http://download.tensorflow.org/mod
 
 2) To extract features into TensorFlow storage format, please run:
 ```
-python ./extract_data/extract_full_NUS_WIDE_images_attention_VGG_feature_2_TFRecord.py			#`data_set` == `Train`: create NUS_WIDE_Train_full_feature_ZLIB.tfrecords
-python ./extract_data/extract_full_NUS_WIDE_images_attention_VGG_feature_2_TFRecord.py			#`data_set` == `Test`: create NUS_WIDE_Test_full_feature_ZLIB.tfrecords
+python ./extract_data/extract_full_NUS_WIDE_images_VGG_feature_2_TFRecord.py			#`data_set` == `Train`: create NUS_WIDE_Train_full_feature_ZLIB.tfrecords
+python ./extract_data/extract_full_NUS_WIDE_images_VGG_feature_2_TFRecord.py			#`data_set` == `Test`: create NUS_WIDE_Test_full_feature_ZLIB.tfrecords
 ```
 Please change the `data_set` variable in the script to `Train` and `Test` to extract `NUS_WIDE_Train_full_feature_ZLIB.tfrecords` and `NUS_WIDE_Test_full_feature_ZLIB.tfrecords`.
 
