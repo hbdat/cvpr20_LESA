@@ -74,7 +74,7 @@ python ./zeroshot_experiments/OpenImage_evaluate_top_multi_label.py					#set `ev
 Please set the `evaluation_path` variable to the model checkpoint created in step 1) above
 
 ---
-## Model Checkpoint
+## Pretrained Model
 We also include the checkpoint of the zero-shot model on NUS-WIDE for fast evaluation (`./results/release_zs_NUS_WIDE_log_GPU_7_1587185916d2570488/`)
 
 ---
